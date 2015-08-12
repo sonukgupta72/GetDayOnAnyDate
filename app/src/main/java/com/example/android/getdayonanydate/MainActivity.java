@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -15,8 +17,11 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Date date1 = new Date();
+        SimpleDateFormat sdf1 = new SimpleDateFormat("dd MMM EEE  hh:mm:ss");
+        String dateString = sdf1.format(date1);
+        displayCurrentDay(dateString);
     }
-
 
     public void getDay(View view)    {
         int c,i=0,dayCounter=0;
@@ -47,6 +52,9 @@ public class MainActivity extends ActionBarActivity {
             {
                 if(d>28) {
                     dayCounter = 7;
+                }
+                else{
+                    dayCounter = (c + 31 + d - i-1) % 7;
                 }
             }
             else
@@ -149,7 +157,7 @@ public class MainActivity extends ActionBarActivity {
                 dayCounter = (c + 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + d-1) % 7;
             }
         }
-        if(m<0 || m>12) {
+        if(m<=0 || m>12 || d<=0) {
             dayCounter = 7;
         }
 
@@ -178,6 +186,8 @@ public class MainActivity extends ActionBarActivity {
         if(dayCounter==7) {
             displayDay("Invalid date");
         }
+
+
     }
 
     @Override
@@ -204,5 +214,9 @@ public class MainActivity extends ActionBarActivity {
     public void displayDay(String day){
         TextView dayTextView=(TextView)findViewById(R.id.text_view1);
         dayTextView.setText(""+day);
+    }
+    public void displayCurrentDay(String currentDate){
+        TextView dayTextView=(TextView)findViewById(R.id.text_view2);
+        dayTextView.setText("Today: "+currentDate);
     }
 }
