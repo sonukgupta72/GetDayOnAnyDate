@@ -18,7 +18,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Date date1 = new Date();
-        SimpleDateFormat sdf1 = new SimpleDateFormat("dd MMM EEE  hh:mm:ss");
+        SimpleDateFormat sdf1 = new SimpleDateFormat("dd-MM-yyyy EEE");
         String dateString = sdf1.format(date1);
         displayCurrentDay(dateString);
     }

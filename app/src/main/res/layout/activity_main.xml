@@ -8,7 +8,41 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#FFB74D">
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="28dp"
+        android:id="@+id/text_view2"
+        android:padding="8dp"
+        android:background="#F48FB1"
+        android:hint="Current DD-MM-YYYY EEE" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:textSize="42dp"
+        android:padding="8dp"
+        android:id="@+id/text_view1"
+        android:hint="Get Day"
+        android:background="#F06292"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="28dp"
+        android:padding="8dp"
+        android:background="#F48FB1"
+        android:hint="Type Date" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,6 +56,7 @@
         android:textSize="48dp"
         android:id="@+id/editText1"
         android:hint="DD"
+            android:background="#F06292"
         android:layout_weight="1"
         android:maxLength="2"
         android:padding="8dp"/>
@@ -32,6 +67,7 @@
         android:textSize="48dp"
         android:id="@+id/editText2"
         android:hint="MM"
+            android:background="#F06292"
         android:layout_weight="1"
         android:maxLength="2"
         android:padding="8dp"/>
@@ -41,41 +77,29 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:id="@+id/editText3"
-        android:textSize="42dp"
+        android:textSize="48dp"
         android:hint="YYYY"
+            android:background="#F06292"
         android:layout_weight="2"
         android:maxLength="4"
         android:padding="8dp"/>
     </LinearLayout>
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:textSize="42dp"
-        android:padding="8dp"
-        android:id="@+id/text_view1"
-        android:hint="Day" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button"
+        android:layout_marginTop="16dp"
         android:padding="8dp"
         android:layout_gravity="center_horizontal"
         android:text="Press to get The Day"
         android:textSize="14dp"
-        android:onClick="getDay"/>
+        android:onClick="getDay"
+        android:textColor="#FFFFFF"
+        android:background="#2196F3"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:textSize="22dp"
-        android:id="@+id/text_view2"
-        android:padding="8dp"
-        android:hint="Current DD-MM HH:MM:SS" />
 
 
 </LinearLayout>
